@@ -37,10 +37,10 @@ public class main
 	static double _clock 					= 0.0;
 	static double _timeToNextArrival 		= 0.0;
 	static double _timeOfServerCompletion 	= 0.0;
-	static double _timeToNextEvent 		= 0.0;
-	static double _timeFree				= 0.0;
+	static double _timeToNextEvent 			= 0.0;
+	static double _timeFree					= 0.0;
 	static double _serverTimeFree			= 0.0;
-	static double _totalWaitingTime		= 0.0;
+	static double _totalWaitingTime			= 0.0;
 	
 	// Main code block.
 	public static void main(String[] args)
@@ -99,7 +99,7 @@ public class main
 			}
 			
 			// Handle the next event.
-			if (arrivalEvent)
+			if (arrivalEvent && _totalCustomersServed < _maxDepartures)
 			{
 				arrivalEvent(ra, rs, timeOfPreviousEvent);
 			}
@@ -197,13 +197,11 @@ public class main
 	{
 		System.out.println("\nSimulation completed!\n\nSIMULATION REPORT\n-----------------");
 		
-//		System.out.println("_totalArrivals: " + _totalArrivals);
-//		System.out.println("_totalCustomersServed: " + _totalCustomersServed);
-//		System.out.println("_clock: " + _clock);
-//		System.out.println("_totalWaitingTime: " + _totalWaitingTime);
-//		System.out.println("_serverTimeFree: " + _serverTimeFree);
-		
-		
+		System.out.println("_totalArrivals: " + _totalArrivals);
+		System.out.println("_totalCustomersServed: " + _totalCustomersServed);
+		System.out.println("_clock: " + _clock);
+		System.out.println("_totalWaitingTime: " + _totalWaitingTime);
+		System.out.println("_serverTimeFree: " + _serverTimeFree);
 	}
 	
 	// Function to receive the input parameters.
